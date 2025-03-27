@@ -48,7 +48,3 @@ This is a Python program for **chatbot** that do the basic things like:\
 - Subscribe via [RapidAPI](https://rapidapi.com/).
 - Because My bank name and my card details is not accepted by the **RapidAPI Site** therefore I am unable to use the API for Mobile phone details.
 - I attach the screenshot of my output which shows that I am not able to use the API.
-
----
-
-Let me know if you need **fixes or improvements!** 🚀
