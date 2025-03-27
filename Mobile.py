@@ -11,7 +11,7 @@ def get_latest_phones(soc_name):
     url = f"https://gsmarenaparser.p.rapidapi.com/api/values/devicesbysoc/{soc_encoded}"
 
     headers = {
-        "X-RapidAPI-Key": "YOUR_RAPIDAPI_KEY",  # 🔹 Replace with your actual API Key
+        "X-RapidAPI-Key": "YOUR_RAPIDAPI_KEY",  
         "X-RapidAPI-Host": "gsmarenaparser.p.rapidapi.com"
     }
 
@@ -23,7 +23,7 @@ def get_latest_phones(soc_name):
         if response.status_code == 403:
             return ["Error: Access Denied (403). Check API key or subscription."]
 
-        response.raise_for_status()  # Raise exception for 4xx/5xx responses
+        response.raise_for_status()  
         phone_data = response.json()
         
         return [phone.get("name", "Unknown Model") for phone in phone_data.get("data", [])]
@@ -39,8 +39,8 @@ def ai_understand_query(user_input):
     """
     Use Google Gemini AI to determine if the query asks about new phone models.
     """
-    genai.configure(api_key="AIzaSyBReedK0QcsRL8V2dnEJAHDJl3Sf6YctKI")  # 🔹 Replace with actual API Key
-    model = genai.GenerativeModel("gemini-1.5-pro-latest")  # Ensure correct model
+    genai.configure(api_key="AIzaSyBReedK0QcsRL8V2dnEJAHDJl3Sf6YctKI")  
+    model = genai.GenerativeModel("gemini-1.5-pro-latest")  
 
     prompt = f"""
     User Query: "{user_input}"
@@ -71,4 +71,4 @@ def chatbot_response(user_input, soc_name="Snapdragon 8 Gen 3"):
 
 # Example Usage:
 user_query = "What’s the latest phone model?"
-print(chatbot_response(user_query, "Snapdragon 8 Gen 3"))  # Replace with any SoC
+print(chatbot_response(user_query, "Snapdragon 8 Gen 3"))  
